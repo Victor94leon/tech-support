@@ -16,7 +16,7 @@ public class Responder
     private ArrayList<String> respuestasAleatorias;
     // Colección de objetos String para guardar respuestas predeterminadas 
     private HashMap<String,String> respuestasPredeterminadas;
-    
+
     /**
      * Construct a Responder - nothing to do
      */
@@ -42,17 +42,16 @@ public class Responder
      * Generate a response.
      * @return   A string that should be displayed as the response
      */
-    public String generateResponse()
+    public String generateResponse(String palabraBuscada)
     {
-        int respuestaAleatoria = random.nextInt(respuestasAleatorias.size());
-        return respuestasAleatorias.get(respuestaAleatoria);
-    }
-     
-    /**
-     * Busca una respuesta en la lista de respuestas predeterminadas
-     */
-    public String findResponse(String palabraBuscada)
-    {
-        return respuestasPredeterminadas.get(palabraBuscada);
+        String respuesta;
+        if (respuestasPredeterminadas.get(palabraBuscada)!=null){
+            respuesta = respuestasPredeterminadas.get(palabraBuscada);
+        }
+        else {
+            int respuestaAleatoria = random.nextInt(respuestasAleatorias.size());
+            respuesta = respuestasAleatorias.get(respuestaAleatoria);
+        }
+        return respuesta;
     }
 }
