@@ -38,12 +38,12 @@ public class SupportSystem
          
         while(!finished) {
             String input = reader.getInput();
-            Responder respuestas = new Responder();
+
             if(input.toLowerCase().trim().equals("bye")) {
                 finished = true;
             }
-            else if (respuestas.findResponse(input.toLowerCase())!=null) {
-                System.out.println(respuestas.findResponse(input.toLowerCase()));
+            else if (responder.findResponse(input.toLowerCase())!=null) {
+                System.out.println(responder.findResponse(input.toLowerCase()));
             }
             else {
                 String response = responder.generateResponse();
