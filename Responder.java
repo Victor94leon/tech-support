@@ -49,8 +49,7 @@ public class Responder
             respuesta = respuestasPredeterminadas.get(palabraBuscada);
         }
         else {
-            int respuestaAleatoria = random.nextInt(respuestasAleatorias.size());
-            respuesta = respuestasAleatorias.get(respuestaAleatoria);
+            respuesta = respuestasAleatorias.get(random.nextInt(respuestasAleatorias.size()));
         }
         return respuesta;
     }
